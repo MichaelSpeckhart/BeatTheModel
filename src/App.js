@@ -23,7 +23,7 @@ function App() {
           Welcome to Beat The Model, an educational module that will teach you about statistics and statistical modeling by predicting the outcome of Lehigh-Lafayette football games. Click on the football to learn more!
         </h2>
     
-        <a className="menu" href="./src/2ndpage.html" target="_blank" rel="noopener noreferrer"><img src={football} className="football" alt="football"></img></a>
+        <a href="./src/2ndpage.html" target="_blank" rel="noopener noreferrer"><img src={football} className="football" alt="football"></img></a>
     </div>
   );
 }

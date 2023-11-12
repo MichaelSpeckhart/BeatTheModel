@@ -1,11 +1,11 @@
 body {
-    color: white;
-    font-family: 'Times New Roman', Times, serif;
+    color: #f7f5de;
+    font-family: amazonfont;
     font-weight: normal;
     background-color:#292a2c;
 }
 head {
-    color: white;
+    color: #f7f5de;
 }
 .Lafpic {
     width: 250px;
@@ -19,7 +19,7 @@ head {
 
 .title {
     text-align: center;
-    font-family: impact;
+    font-family: amazonfont;
     font-size: 75px;
 }
 
@@ -28,7 +28,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: rgba(51,51,51, .75);
+    background-color: transparent;
   }
   
   li {
@@ -37,7 +37,7 @@ ul {
   
   li a {
     display: block;
-    color: white;
+    color: #f7f5de;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -65,10 +65,32 @@ ul {
 }
 div.box {
   width: 320px;
-  height: 300px;
+  height: 375px;
   padding: 10px;
-  border: 5px solid gray;
+  border: 5px solid #b57731;
   margin: 0;
-  background-color: #292a2c;
-  font-color: #f7f5de;
+  color: #f7f5de;
+}
+div.absolute {
+    float:right;
+    position: static;
+    border: 5px solid #b57731;
+    width: 320px;
+    height: 375px;
+    padding: 10px;
+    margin:10px;
+  }
+  div.static {
+    position: static;
+    border: 3px solid #73AD21;
+  }
+  @font-face {
+    font-family: amazonfont;
+    src: url(./Bookerly-Regular.ttf);
+}
+
+hr {
+    background-color: #6e0e14;
+    height: 8px;
+    border: none;
 }

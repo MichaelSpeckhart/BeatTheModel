@@ -1,4 +1,5 @@
 .Intro {
+  font-family: amazonfont;
   color: white;
   /*background: black;*/
   background-image: url('back.png');
@@ -10,8 +11,8 @@
 
 .title {
   text-align: center;
-  font-family: impact;
-  font-size: 75px;
+  font-family: amazonfont;
+  font-size: 70px;
 }
 
 .text {
@@ -62,4 +63,9 @@ li a:hover {
 
 .list {
   font-size: 35px;
+}
+
+@font-face {
+  font-family: amazonfont;
+  src: url(./Bookerly-Regular.ttf);
 }
