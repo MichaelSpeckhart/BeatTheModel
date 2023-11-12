@@ -64,21 +64,24 @@ ul {
     font-size: 35px;
 }
 div.box {
-  width: 320px;
+  width: 600px;
   height: 375px;
   padding: 10px;
   border: 5px solid #b57731;
   margin: 0;
   color: #f7f5de;
+  font-size:20px;
 }
 div.absolute {
     float:right;
     position: static;
     border: 5px solid #b57731;
-    width: 320px;
+    width: 600px;
     height: 375px;
     padding: 10px;
     margin:10px;
+    color: #f7f5de;
+    font-size:25px;
   }
   div.static {
     position: static;
