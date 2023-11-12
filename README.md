@@ -13,22 +13,15 @@ Our website is hosted [here](https://main.dj88scqv6lsee.amplifyapp.com/news.asp)
 
 ## Amazon Products Used
 -SageMaker
-  Prototype, train, hyperparameter tune hyperparameters  
 -Lambda  
-  Train the model, and predict a  random year  
 -API Endpoint  
-  Allow internet traffic to access lambda function  
 -Amplify  
-  Deploying the website  
 -S3  
-  Store training data  
 -VPC  
-  Allow AWS services to talk to each other  
 -IAM  
-  Set permissions for users running lambda  
 -Bookerly Font  
 
 
 ## More Information
-Check out [Our Slideshow](https://docs.google.com/presentation/d/1W1nTe5TKPeGjA40EOYCbuNmBvycZxur_eQeMa1QSNRI/edit?usp=sharing)
+Check out [Our Slideshow](https://docs.google.com/presentation/d/1W1nTe5TKPeGjA40EOYCbuNmBvycZxur_eQeMa1QSNRI/edit?usp=sharing) for more information
 
