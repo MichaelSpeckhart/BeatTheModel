@@ -12,14 +12,14 @@ Our goal in creating this game is to address educational inequality in the Lehig
 Our website is hosted [here](https://main.dj88scqv6lsee.amplifyapp.com/news.asp), where you can go through our educational module and compete against our model to predict the outcome of Le-Laf games.
 
 ## Amazon Products Used
--SageMaker  
--Lambda  
--API Endpoint  
--Amplify  
--S3  
--VPC  
--IAM  
--Bookerly Font  
+-**SageMaker**: Prototype, train, hyperparameter tune hyperparameters  
+-**Lambda**: Train the model, and predict a random year  
+-**API Endpoint**: Allow internet traffic to access lambda function  
+-**Amplify**: Deploying the website  
+-**S3**: Store training data  
+-**VPC**: Allow AWS services to talk to each other  
+-**IAM**: Set permissions for users running lambda  
+-**Bookerly Font**: Used on website  
 
 
 ## More Information
