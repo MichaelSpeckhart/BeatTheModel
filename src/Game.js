@@ -63,7 +63,7 @@ const LafGame = () => {
 
   const handleButtonClick = (selectedTeam) => {
     setSelectedButton(selectedTeam);
-    const winner = stats.team1 > stats.team2 ? 'team1' : 'team2';
+    const winner = stats.team1 > stats.team2 ? 'Lafayette' : 'Lehigh';
 
     if (selectedTeam === winner) {
       setPlayerScore((prevScore) => prevScore + 1);
@@ -115,11 +115,11 @@ const LafGame = () => {
         justifyContent: 'center',
         minHeight: '100vh',
         background: selectedButton === 'Lehigh' ? '#5C4033' : '#800000',
-        color: '#fff',
+       // color: '#fff',
       }}
       >
 
-      <h2>Le-Laf Beat The Model</h2>
+      <h1>Le-Laf Beat The Model</h1>
         <div className="game-info">
          <p>Round: {rounds}/10</p>
          <div className="team-stats">
@@ -147,7 +147,6 @@ const LafGame = () => {
         >
           Lafayette
         </button>
-
         <button
           onClick={() => handleButtonClick('Lehigh')}
           style={{
