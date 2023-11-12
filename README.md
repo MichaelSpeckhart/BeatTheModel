@@ -1,6 +1,6 @@
 # Beat The Model: educating and empowering Lehigh Valley youth using statistics and statistical modeling
 
-##Project Description
+## Project Description
 We built an educational website to teach basic statistics to Lehigh Valley students through statistical modeling used to predict scores of Lehigh-Lafayette football games. This website includes an educational page and a game where you face off against our own model to predict the outcome of Le-Laf! 
 
 ## Impact on Education
