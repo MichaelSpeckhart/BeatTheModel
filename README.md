@@ -7,6 +7,7 @@ We built an educational website to teach basic statistics to Lehigh Valley stude
 Our goal in creating this game is to address educational inequality in the Lehigh Valley. By offering an interactive and educational experience that incorporates statistics and critical thinking, we aim to provide a learning platform accessible to a wide range of students despite their backgrounds. We believe that by fostering an interest in statistics and analytical thinking through the excitement of football predictions, we can contribute to leveling the playing field and promoting educational empowerment in our community.
 
 ## Technical Approach
+AWS Sagemaker was used to prototype multiple models including LR, SVM, and Decision Tree classifiers. We compared accuracies and ran hyperparmater tuning with kfold cross validation to get a model that ran with approx. 70% accuracy. This was then deployed to AWS Lambda where an API endpoint was used to allow our website to interact with it.
 
 ## Instructions
 Our website is hosted [here](https://main.dj88scqv6lsee.amplifyapp.com/news.asp), where you can go through our educational module and compete against our model to predict the outcome of Le-Laf games.
