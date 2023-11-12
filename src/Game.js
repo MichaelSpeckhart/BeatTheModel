@@ -48,7 +48,7 @@ const LafGame = () => {
   const [rounds, setRounds] = useState(0);
   const [stats, setStats] = useState(generateRandomStats());
   const [playerScore, setPlayerScore] = useState(0);
-
+  const [selectedButton, setSelectedButton] = useState(null);
 
 
   parseJson();
@@ -62,6 +62,7 @@ const LafGame = () => {
   }, [rounds, playerScore]);
 
   const handleButtonClick = (selectedTeam) => {
+    setSelectedButton(selectedTeam);
     const winner = stats.team1 > stats.team2 ? 'team1' : 'team2';
 
     if (selectedTeam === winner) {
@@ -72,31 +73,99 @@ const LafGame = () => {
     setStats(generateRandomStats());
   };
 
+      
+//   const navigate = useNavigate();
+
+  
+
   return (
-    <div className="app-container">
-      <h1>Football Game Guessing Game</h1>
-      <div className="game-info">
-        <p>Round: {rounds}/10</p>
-        <div className="team-stats">
-          <div className="team-stat">
-            <strong>Team 1 Stats:</strong> {stats.team1}
-          </div>
-          <div className="team-stat">
-            <strong>Team 2 Stats:</strong> {stats.team2}
-          </div>
-        </div>
-      </div>
-      <div className="buttons">
-        <button className="team-button" onClick={() => handleButtonClick('team1')}>
-          Guess Team 1
+    
+    // <div className="app-container">
+    //   <h1>Football Game Guessing Game</h1>
+    //   <div className="game-info">
+    //     <p>Round: {rounds}/10</p>
+    //     <div className="team-stats">
+    //       <div className="team-stat">
+    //         <strong>Team 1 Stats:</strong> {stats.team1}
+    //       </div>
+    //       <div className="team-stat">
+    //         <strong>Team 2 Stats:</strong> {stats.team2}
+    //       </div>
+    //     </div>
+    //   </div>
+    //   <div className="buttons">
+    //     <button className="team-button" onClick={() => handleButtonClick('team1')}>
+    //       Guess Team 1
+    //     </button>
+    //     <button className="team-button" onClick={() => handleButtonClick('team2')}>
+    //       Guess Team 2
+    //     </button>
+    //   </div>
+    //   <div className="scoreboard">
+    //     <p>Player Score: {playerScore}</p>
+    //     <progress value={rounds} max={10}></progress>
+    //   </div>
+    // </div>
+
+        <div
+        style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+        background: selectedButton === 'Lehigh' ? '#5C4033' : '#800000',
+        color: '#fff',
+      }}
+      >
+
+      <h2>Le-Laf Beat The Model</h2>
+        <div className="game-info">
+         <p>Round: {rounds}/10</p>
+         <div className="team-stats">
+           <div className="team-stat">
+             <strong>Team 1 Stats:</strong> {stats.team1}
+           </div>
+           <div className="team-stat">
+             <strong>Team 2 Stats:</strong> {stats.team2}
+           </div>
+         </div>
+       </div>
+
+      <div className='team-button'>
+        <button
+          onClick={() => handleButtonClick('Lafayette')}
+          style={{
+            padding: '10px',
+            backgroundColor: selectedButton === 'Lafayette' ? '#A52A2A' : '#ddd',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+            marginRight: '10px',
+          }}
+        >
+          Lafayette
         </button>
-        <button className="team-button" onClick={() => handleButtonClick('team2')}>
-          Guess Team 2
+
+        <button
+          onClick={() => handleButtonClick('Lehigh')}
+          style={{
+            padding: '10px',
+            backgroundColor: selectedButton === 'Lehigh' ? '#6F4E37' : '#ddd',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px',
+            cursor: 'pointer',
+          }}
+        >
+          Lehigh
         </button>
-      </div>
-      <div className="scoreboard">
-        <p>Player Score: {playerScore}</p>
-        <progress value={rounds} max={10}></progress>
+        
+    </div>
+    <div className="scoreboard">
+         <p>Player Score: {playerScore}</p>
+         <progress value={rounds} max={10}></progress>
       </div>
     </div>
   );
