@@ -5,6 +5,7 @@ import lafpic from './leopards.png';
 import lepic from './hawks.png';
 import rivalry from './rivalry.png';
 import football from './college_football.png';
+
 const dataURL = "https://hcjsx6yqmh2qa76n3wg6eifj2a0odcja.lambda-url.us-east-1.on.aws/";
 
 const generateRandomStats = () => {
@@ -14,9 +15,16 @@ const generateRandomStats = () => {
   };
 };
 
-const FeatureBox = ({ label, value }) => (
+
+var featureValues;
+const featureNames = [
+  "Temperature (F)", "Raining?", "Lehigh Home?", "Last Year Win", "2 Years Ago Lehigh Won?", "3 Years Ago Lehigh Won?",
+  "Lehigh Win Percentage", "Lafayette Win Percentage", "Avg Win Lehigh", "Diff"
+];
+
+const FeatureBox = ({ name, value }) => (
   <div style={{ border: '1px solid black', padding: '10px', margin: '5px' }}>
-    <strong>{label}:</strong> {value}
+    <strong>{name}:</strong> {value}
   </div>
 );
 
@@ -24,8 +32,11 @@ function App() {
   const [rounds, setRounds] = useState(0);
   const [stats, setStats] = useState(generateRandomStats());
   const [playerScore, setPlayerScore] = useState(0);
+  const [modelScore, setModelScore] = useState(0);
   const [selectedButton, setSelectedButton] = useState(null);
   const [features, setFeatures] = useState([]);
+  const [winner, setWinner] = useState(null);
+  const [prediction, setPrediction] = useState(null);
 
   useEffect(() => {
     fetchStatistics();
@@ -40,8 +51,25 @@ function App() {
         return response.json();
       })
       .then(data => {
-        // Extract features and set them in the state
-        setFeatures(data.features.map((feature, index) => ({ label: `Feature ${index + 1}`, value: feature })));
+        // Map feature names to their corresponding values
+         featureValues = data.features.map((feature, index) => ({
+          name: featureNames[index],
+          value: feature
+        }));
+
+        featureValues.push({
+          name: "Winner",
+          value: data.winner === 0 ? "Lafayette" : "Lehigh"
+        });
+
+        featureValues.push({
+          name: "prediction",
+          value: data.prediction === 0 ? "Lafayette" : "Lehigh"
+        });
+
+        setFeatures(featureValues);
+        setWinner(data.winner === 0 ? "Lafayette" : "Lehigh");
+        setPrediction(data.prediction === 0 ? "Lafayette" : "Lehigh");
       })
       .catch(error => {
         console.error('Error:', error);
@@ -51,6 +79,7 @@ function App() {
   useEffect(() => {
     if (rounds === 10) {
       alert(`Game Over! Your score: ${playerScore}`);
+      alert(`Game Over! Your score: ${modelScore}`);
       setRounds(0);
       setPlayerScore(0);
       setStats(generateRandomStats());
@@ -60,10 +89,13 @@ function App() {
 
   const handleButtonClick = (selectedTeam) => {
     setSelectedButton(selectedTeam);
-    const winner = stats.team1 > stats.team2 ? 'Lafayette' : 'Lehigh';
+    console.log(winner);
 
     if (selectedTeam === winner) {
       setPlayerScore((prevScore) => prevScore + 1);
+    }
+    if (winner == prediction) {
+      setModelScore((prevModelScore) => prevModelScore + 1);
     }
 
     setRounds((prevRounds) => prevRounds + 1);
@@ -84,17 +116,6 @@ function App() {
     >
 
       <h1>Le-Laf Beat The Model</h1>
-      <div className="game-info">
-        <p>Round: {rounds}/10</p>
-        <div className="team-stats">
-          <div className="team-stat">
-            <strong>Team 1 Stats:</strong> {stats.team1}
-          </div>
-          <div className="team-stat">
-            <strong>Team 2 Stats:</strong> {stats.team2}
-          </div>
-        </div>
-      </div>
 
       <div className='team-button'>
         <button
@@ -128,13 +149,18 @@ function App() {
 
       <div className="scoreboard">
         <p>Player Score: {playerScore}</p>
+        <p>Model Score: {modelScore}</p>
         <progress value={rounds} max={10}></progress>
       </div>
 
       {/* Display features in boxes */}
       <div>
         {features.map((feature, index) => (
-          <FeatureBox key={index} label={feature.label} value={feature.value} />
+          <FeatureBox
+            key={index}
+            name={feature.name}
+            value={feature.value}
+          />
         ))}
       </div>
     </div>
