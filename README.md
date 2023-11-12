@@ -12,8 +12,7 @@ Our goal in creating this game is to address educational inequality in the Lehig
 Our website is hosted [here](https://main.dj88scqv6lsee.amplifyapp.com/news.asp), where you can go through our educational module and compete against our model to predict the outcome of Le-Laf games.
 
 ## Amazon Products Used
--SageMaker
-
+-SageMaker  
 -Lambda  
 -API Endpoint  
 -Amplify  
