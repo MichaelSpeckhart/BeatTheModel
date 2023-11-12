@@ -1,0 +1,74 @@
+body {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: normal;
+    background-color:#292a2c;
+}
+head {
+    color: white;
+}
+.Lafpic {
+    width: 250px;
+    float: left;
+  }
+  
+.Lepic {
+    width: 225px;
+    float: right;
+}
+
+.title {
+    text-align: center;
+    font-family: impact;
+    font-size: 75px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(51,51,51, .75);
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color: #111;
+  }
+.undo {
+    display: revert;
+    color: revert;
+    text-align: revert;
+    padding: revert;
+    text-decoration: revert;
+    float: revert;
+    list-style-type: revert;
+    margin: revert;
+    padding: revert;
+    overflow: revert;
+    background-color: black;
+}
+.list {
+    font-size: 35px;
+}
+div.box {
+  width: 320px;
+  height: 300px;
+  padding: 10px;
+  border: 5px solid gray;
+  margin: 0;
+  background-color: #292a2c;
+  font-color: #f7f5de;
+}
