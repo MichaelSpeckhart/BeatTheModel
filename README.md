@@ -21,6 +21,6 @@ AWS Sagemaker was used to prototype multiple models including LR, SVM, and Decis
 
 
 ## More Information
-Check out [Our Slideshow](https://docs.google.com/presentation/d/1W1nTe5TKPeGjA40EOYCbuNmBvycZxur_eQeMa1QSNRI/edit?usp=sharing) for more information
+Check out [Our Slideshow](https://docs.google.com/presentation/d/1W1nTe5TKPeGjA40EOYCbuNmBvycZxur_eQeMa1QSNRI/edit?usp=sharing) for more information  
 All data for model sourced from wikipedia
 
