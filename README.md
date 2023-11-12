@@ -2,7 +2,7 @@ We built an educational website to teach basic statistics to Lehigh Valley stude
 
 Our goal in creating this game is to address educational inequality in the Lehigh Valley. By offering an interactive and educational experience that incorporates statistics and critical thinking, we aim to provide a learning platform accessible to a wide range of students despite their backgrounds.We believe that by fostering an interest in statistics and analytical thinking through the excitement of football predictions, we can contribute to leveling the playing field and promoting educational empowerment in our community.
 
-[Our Slideshow](https://docs.google.com/presentation/d/1W1nTe5TKPeGjA40EOYCbuNmBvycZxur_eQeMa1QSNRI/edit?usp=sharing)
-
 [Our website](https://main.dj88scqv6lsee.amplifyapp.com/news.asp)
+
+[Our Slideshow](https://docs.google.com/presentation/d/1W1nTe5TKPeGjA40EOYCbuNmBvycZxur_eQeMa1QSNRI/edit?usp=sharing)
 
